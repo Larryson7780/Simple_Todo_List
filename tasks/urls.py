@@ -1,0 +1,10 @@
+from django.urls import path
+
+from tasks import views
+
+urlpatterns = [
+    path('', views.task_list, name='task_list'),
+    path('add_task/', views.add_task, name='add_task'),
+    path('complete/<int:task_id>', views.complete_task, name='complete_task'),
+    path('delete-completed/', views.delete_completed_tasks, name='delete_completed_tasks'),
+]
